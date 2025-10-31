@@ -1,7 +1,7 @@
-# 🚗 GeoTrack Mobility – Plataforma Full Stack para Monitoreo Vehicular
+# 🚗 GeoTrack – Plataforma Full Stack para Monitoreo Vehicular
 
 ## 📘 Descripción general  
-**GeoTrack Mobility** es una aplicación **full stack (Java + React)** diseñada para el registro, rastreo y análisis de vehículos en tiempo real.  
+**GeoTrack** es una aplicación **full stack (Java + React)** diseñada para el registro, rastreo y análisis de vehículos en tiempo real.  
 El sistema combina un **backend robusto en Spring Boot** con un **frontend moderno en React**, integrando servicios de geolocalización y mapas interactivos.  
 
 Permite visualizar trayectos, calcular distancias, detectar alertas y administrar usuarios desde una interfaz web responsive o desde una app mobile desarrollada con React Native.
@@ -301,4 +301,4 @@ GitHub: [@Mtcarrixo12](https://github.com/Mtcarrixo12)
 
 ---
 
-**GeoTrack Mobility** - Monitoreo Vehicular Inteligente 🚗📍
+**GeoTrack** - Monitoreo Vehicular Inteligente 🚗📍
