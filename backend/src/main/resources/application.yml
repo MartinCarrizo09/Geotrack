@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: geotrack-mobility
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/geotrack
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  security:
+    jwt:
+      secret-key: geotrack-secret-key-change-this-in-production-2024
+      expiration: 86400000 # 24 hours
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+# Google Maps API (opcional)
+google:
+  maps:
+    api-key: YOUR_GOOGLE_MAPS_API_KEY_HERE
+
+logging:
+  level:
+    com.geotrack.mobility: DEBUG
+    org.springframework.security: DEBUG
