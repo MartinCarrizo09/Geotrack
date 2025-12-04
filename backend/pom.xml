@@ -13,10 +13,10 @@
     </parent>
     
     <groupId>com.geotrack</groupId>
-    <artifactId>mobility-backend</artifactId>
+    <artifactId>geotrack-backend</artifactId>
     <version>1.0.0</version>
-    <name>GeoTrack Mobility Backend</name>
-    <description>Backend para sistema de monitoreo vehicular</description>
+    <name>GeoTrack Backend</name>
+    <description>Sistema de Rastreo y Monitoreo Vehicular</description>
     
     <properties>
         <java.version>17</java.version>

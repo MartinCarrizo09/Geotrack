@@ -46,8 +46,13 @@ public class Vehicle {
     @JoinColumn(name = "driver_id")
     private User driver;
     
+    @Column(name = "latitud_actual")
     private Double currentLatitude;
+    
+    @Column(name = "longitud_actual")
     private Double currentLongitude;
+    
+    @Transient
     private Double currentSpeed;
     
     @Column(columnDefinition = "TEXT")

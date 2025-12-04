@@ -52,16 +52,16 @@ function Alerts() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Gestión de Alertas</h1>
+    <div className="container mx-auto px-4 py-4 md:py-8">
+      <div className="flex justify-between items-center mb-6 md:mb-8">
+        <h1 className="text-2xl md:text-3xl font-bold">Gestión de Alertas</h1>
       </div>
 
       {/* Filters */}
-      <div className="mb-6 flex gap-4">
+      <div className="mb-6 flex flex-wrap gap-2 md:gap-4">
         <button
           onClick={() => setFilter('unresolved')}
-          className={`px-4 py-2 rounded-lg ${
+          className={`flex-1 sm:flex-none px-4 py-2 rounded-lg ${
             filter === 'unresolved' ? 'bg-primary-600 text-white' : 'bg-gray-200'
           }`}
         >
@@ -69,7 +69,7 @@ function Alerts() {
         </button>
         <button
           onClick={() => setFilter('all')}
-          className={`px-4 py-2 rounded-lg ${
+          className={`flex-1 sm:flex-none px-4 py-2 rounded-lg ${
             filter === 'all' ? 'bg-primary-600 text-white' : 'bg-gray-200'
           }`}
         >

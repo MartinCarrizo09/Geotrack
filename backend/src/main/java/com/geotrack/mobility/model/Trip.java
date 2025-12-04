@@ -25,7 +25,7 @@ public class Trip {
     private Vehicle vehicle;
     
     @ManyToOne
-    @JoinColumn(name = "driver_id", nullable = false)
+    @JoinColumn(name = "driver_id")
     private User driver;
     
     @Column(nullable = false)

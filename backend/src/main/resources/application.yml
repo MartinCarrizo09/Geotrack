@@ -1,11 +1,11 @@
 spring:
   application:
-    name: geotrack-mobility
+    name: geotrack
   
   datasource:
     url: jdbc:postgresql://localhost:5432/geotrack
     username: postgres
-    password: postgres
+    password: "tpi"
     driver-class-name: org.postgresql.Driver
   
   jpa:
@@ -41,5 +41,5 @@ google:
 
 logging:
   level:
-    com.geotrack.mobility: DEBUG
+    com.geotrack: DEBUG
     org.springframework.security: DEBUG

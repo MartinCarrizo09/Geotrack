@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-8 md:py-12">
       {/* Hero Section */}
-      <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
-          GeoTrack Mobility
+      <div className="text-center mb-12 md:mb-16">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          GeoTrack
         </h1>
-        <p className="text-xl text-gray-600 mb-8">
+        <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">
           Plataforma Full Stack para Monitoreo Vehicular en Tiempo Real
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/dashboard" className="btn-primary text-lg px-8 py-3">
             Ir al Dashboard
           </Link>
@@ -22,7 +22,7 @@ function Home() {
       </div>
 
       {/* Features */}
-      <div className="grid md:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
         <div className="card text-center">
           <div className="text-5xl mb-4">📍</div>
           <h3 className="text-xl font-bold mb-2">Rastreo en Tiempo Real</h3>
@@ -50,7 +50,7 @@ function Home() {
 
       {/* Stats */}
       <div className="card bg-primary-700 text-white">
-        <div className="grid md:grid-cols-4 gap-8 text-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
           <div>
             <div className="text-4xl font-bold mb-2">150+</div>
             <div className="text-primary-100">Vehículos Activos</div>

@@ -1,7 +1,11 @@
 package com.geotrack.mobility.service;
 
 import com.geotrack.mobility.model.Trip;
+import com.geotrack.mobility.model.User;
+import com.geotrack.mobility.model.Vehicle;
 import com.geotrack.mobility.repository.TripRepository;
+import com.geotrack.mobility.repository.UserRepository;
+import com.geotrack.mobility.repository.VehicleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +19,8 @@ import java.util.Optional;
 public class TripService {
     
     private final TripRepository tripRepository;
+    private final VehicleRepository vehicleRepository;
+    private final UserRepository userRepository;
     
     public List<Trip> getAllTrips() {
         return tripRepository.findAll();
@@ -38,6 +44,19 @@ public class TripService {
     
     @Transactional
     public Trip startTrip(Trip trip) {
+        // Si el trip viene con vehicleId y driverId en lugar de objetos, cargarlos
+        if (trip.getVehicle() != null && trip.getVehicle().getId() != null) {
+            Vehicle vehicle = vehicleRepository.findById(trip.getVehicle().getId())
+                .orElseThrow(() -> new RuntimeException("Vehicle not found"));
+            trip.setVehicle(vehicle);
+        }
+        
+        if (trip.getDriver() != null && trip.getDriver().getId() != null) {
+            User driver = userRepository.findById(trip.getDriver().getId())
+                .orElseThrow(() -> new RuntimeException("Driver not found"));
+            trip.setDriver(driver);
+        }
+        
         trip.setStartTime(LocalDateTime.now());
         trip.setStatus(Trip.TripStatus.IN_PROGRESS);
         return tripRepository.save(trip);

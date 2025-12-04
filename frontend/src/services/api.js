@@ -39,6 +39,7 @@ export const tripAPI = {
   getById: (id) => api.get(`/trips/${id}`),
   getByVehicle: (vehicleId) => api.get(`/trips/vehicle/${vehicleId}`),
   getActive: () => api.get('/trips/active'),
+  create: (trip) => api.post('/trips', trip),
   start: (trip) => api.post('/trips/start', trip),
   end: (id, endLatitude, endLongitude, endAddress) => 
     api.put(`/trips/${id}/end`, null, { params: { endLatitude, endLongitude, endAddress } }),
@@ -55,6 +56,16 @@ export const alertAPI = {
   resolve: (id, resolvedByUserId) => 
     api.put(`/alerts/${id}/resolve`, null, { params: { resolvedByUserId } }),
   delete: (id) => api.delete(`/alerts/${id}`)
+}
+
+// User API
+export const userAPI = {
+  getAll: () => api.get('/users'),
+  getById: (id) => api.get(`/users/${id}`),
+  getByRole: (role) => api.get(`/users/role/${role}`),
+  create: (user) => api.post('/users', user),
+  update: (id, user) => api.put(`/users/${id}`, user),
+  delete: (id) => api.delete(`/users/${id}`)
 }
 
 export default api

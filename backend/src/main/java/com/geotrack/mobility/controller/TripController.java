@@ -43,6 +43,11 @@ public class TripController {
         return ResponseEntity.ok(tripService.getActivTrips());
     }
     
+    @PostMapping
+    public ResponseEntity<Trip> createTrip(@RequestBody Trip trip) {
+        return ResponseEntity.ok(tripService.startTrip(trip));
+    }
+    
     @PostMapping("/start")
     public ResponseEntity<Trip> startTrip(@RequestBody Trip trip) {
         return ResponseEntity.ok(tripService.startTrip(trip));
